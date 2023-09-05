@@ -32,7 +32,7 @@ class Review(Base):
     customer = relationship("Customer", back_populates="reviews")
 
 # Define the `Customer` class, which represents a customer in our domain.
-    class Customer(Base):
+class Customer(Base):
     __tablename__ = 'customers'
 
     id = Column(Integer, primary_key=True)

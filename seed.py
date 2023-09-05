@@ -10,3 +10,23 @@ import random
 creator_engine = create_engine('sqlite:///restaurant_reviews.db')
 Session = sessionmaker(bind=creator_engine)
 session = Session()
+
+# use Faker to generate fake data for the restaurant, review and customer
+for i in range(10):
+    restaurant = Restaurant(name=fake.company(),
+                            price=random.randint(1, 4))
+    session.add(restaurant)
+    session.commit()
+
+for i in range(10):
+    customer = Customer(first_name=fake.first_name(),
+                        last_name=fake.last_name())
+    session.add(customer)
+    session.commit()
+
+for i in range(10):
+    review = Review(star_rating=random.randint(1, 5),
+                    restaurant_id=random.randint(1, 10),
+                    customer_id=random.randint(1, 10))
+    session.add(review)
+    session.commit()
