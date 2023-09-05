@@ -30,3 +30,7 @@ for i in range(10):
                     customer_id=random.randint(1, 10))
     session.add(review)
     session.commit()
+
+# Add all the objects to the session and commit the changes.
+session.add_all([restaurant, customer, review])
+session.commit()
