@@ -1,4 +1,8 @@
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, String, Integer, ForeignKey, Table
+from sqlalchemy.orm import relationship, backref
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 # Create a base class for our models to inherit from.
 Base = declarative_base()
