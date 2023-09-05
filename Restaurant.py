@@ -13,3 +13,16 @@ class Restaurant(Base):
 
     reviews = relationship("Review", back_populates="restaurant")
     customers = relationship("Customer", secondary="reviews")
+
+# Define the `Review` class, which represents a review of a restaurant left by a customer.
+class Review(Base):
+    __tablename__ = 'reviews'
+
+    id = Column(Integer, primary_key=True)
+    star_rating = Column(Integer)
+
+    restaurant_id = Column(Integer, ForeignKey('restaurants.id'))
+    restaurant = relationship("Restaurant", back_populates="reviews")
+
+    customer_id = Column(Integer, ForeignKey('customers.id'))
+    customer = relationship("Customer", back_populates="reviews")
