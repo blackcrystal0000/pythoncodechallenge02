@@ -3,9 +3,13 @@ from sqlalchemy import Column, String, Integer, ForeignKey, Table
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+import ipdb
 
 # Create a base class for our models to inherit from.
 Base = declarative_base()
+
+#add ipdb here to start debugging
+ipdb.set_trace()
 
 # Define the `Restaurant` class, which represents a restaurant in our domain.
 class Restaurant(Base):

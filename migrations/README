@@ -1,1 +1,55 @@
 Generic single-database configuration.
+
+# Restaurant Reviews Domain
+
+This application models a restaurant review domain with three models: `Restaurant`, `Review`, and `Customer`. It allows you to add restaurants, customers, and reviews and view relationships between them.
+
+## Getting Started
+
+To get started using this application, you'll need to have Python, SQLAlchemy, and Faker installed on your computer.
+
+## Usage
+
+Begin by running the `seed.py` script. This will populate the database with sample data. You can then use the methods provided to interact with the data.
+
+### Methods
+
+The following methods are available for interacting with the data:
+
+- `Review customer()`: Returns the `Customer` instance associated with the review.
+
+- `Review restaurant()`: Returns the `Restaurant` instance associated with the review.
+
+- `Restaurant reviews()`: Returns a list of all reviews for the restaurant.
+
+- `Restaurant customers()`: Returns a list of all customers who reviewed the restaurant.
+
+- `Customer reviews()`: Returns a list of all reviews left by the customer.
+
+- `Customer restaurants()`: Returns a list of all restaurants that the customer has reviewed.
+
+- `Customer full_name()`: Returns the full name of the customer in Western-style format.
+
+- `Customer favorite_restaurant()`:Returns the restaurant instance that has the highest rating from this customer.
+
+- `Customer add_review(restaurant, rating)`: Takes a `Restaurant` instance and a rating. Creates a new review with the corresponding `restaurant_id`.
+
+- `Customer delete_reviews(restaurant)`: Takes a `Restaurant` instance and removes all reviews by the customer for this restaurant.
+
+- `Review full_review()`: Returns a string formatted as follows: Review for {insert restaurant name} by {insert customer's full name}: {insert review star_rating} stars.
+
+- `Restaurant fanciest() (class method)`: Returns a single restaurant instance for the restaurant with the highest price.
+
+- `Restaurant all_reviews()`: Returns a list of strings with all reviews for the restaurant, formatted as follows: 
+
+  [
+  
+   "Review for {insert restaurant name} by {insert customer's full name}: {insert review star_rating} stars.",
+   
+   "Review for {insert restaurant name} by {insert customer's full name}: {insert review star_rating} stars.",
+   
+  ]
+
+## Contributors
+
+This project was created by [Crystal Kariuki]. If you'd like to contribute, feel free to submit a pull request.
